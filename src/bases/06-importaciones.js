@@ -1,8 +1,8 @@
 //Arreglo de objetos importaciones
 
-import { heroes } from "../src/data/heroes";
+import { heroes } from "../data/heroes";
 
-const getHeroesById = (id) => {
+export const getHeroesById = (id) => {
   return heroes.find((heroe) => {
     return heroe.id === id;
   });
