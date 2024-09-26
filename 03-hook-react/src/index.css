@@ -8,12 +8,19 @@ body {
 }
 
 button {
-  background-color: #b454e0;
-  padding: 15px 30px;
-  border-color: #b454e0;
-  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 15px 15px;
+  border-color: #f1f1f1;
+  border-radius: 4px;
   font: 2em Arial;
   margin-right: 5px;
   text-align: center;
   display: inline-block;
+}
+
+input {
+  padding: 15px 15px;
+  border: 2px solid rgb(2, 2, 2);
+  border-radius: 4px;
+  margin-left: 5px;
 }
