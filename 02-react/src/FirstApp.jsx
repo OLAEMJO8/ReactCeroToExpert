@@ -1,14 +1,15 @@
 import React from "react";
 
-const newMessage = {
+/*const newMessage = {
   message: "Hola Mundo",
   title: "Majo",
-};
-const FirstApp = () => {
+};*/
+export const FirstApp = ({ title }) => {
   return (
     <div>
-      <h1>{JSON.stringify(newMessage.message)}</h1>
-      <h2>{JSON.stringify(newMessage.title)}</h2>
+      {/*<h1>{JSON.stringify(newMessage)}</h1>*/}
+      <h2>{title}</h2>
+      <button>+1</button>
     </div>
   );
 };
