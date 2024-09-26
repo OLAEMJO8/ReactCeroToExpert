@@ -9,7 +9,6 @@ export const FirstApp = ({ title }) => {
     <div>
       {/*<h1>{JSON.stringify(newMessage)}</h1>*/}
       <h2>{title}</h2>
-      <button>+1</button>
     </div>
   );
 };
