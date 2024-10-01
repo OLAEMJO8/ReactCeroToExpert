@@ -4,11 +4,11 @@ export const PokenonCard = ({ id, name, sprites = [] }) => {
   return (
     <section>
       <h2>
-        #{id}- {name}
+        #{id} - {name}
       </h2>
       <div>
-        {sprites.map((sprite) => (
-          <img key={sprite} src={sprite} alt={name} />
+        {sprites.map((sprite, index) => (
+          <img key={`${name}-${index}`} src={sprite} alt={name} />
         ))}
       </div>
     </section>
