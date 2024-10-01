@@ -11,6 +11,7 @@ import { MultipleCustomHook } from "./03-examples/MultipleCustomHook";
 import { FocusScreen } from "./04-useRef/FocusScreen";
 import { Layout } from "./05-useLayoutEffect/Layout";
 import { Memorize } from "./06-memos/Memorize";
+import { CallBackHook } from "./06-memos/CallBackHook";
 
 const Navigation = () => {
   return (
@@ -42,6 +43,9 @@ const Navigation = () => {
         <li>
           <Link to="/memos">useMemos</Link>
         </li>
+        <li>
+          <Link to="/call-back">useCallback</Link>
+        </li>
       </ul>
     </nav>
   );
@@ -60,6 +64,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/focus-screen" element={<FocusScreen />} />
         <Route path="/layout" element={<Layout />} />
         <Route path="/memos" element={<Memorize />} />
+        <Route path="/call-back" element={<CallBackHook />} />
       </Routes>
     </Router>
   </StrictMode>
