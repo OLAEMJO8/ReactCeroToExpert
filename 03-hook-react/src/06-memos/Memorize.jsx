@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useCounter } from "../hooks/useCounter";
 import { Small } from "./Small";
+import { MemoHook } from "./MemoHook";
 
 export const Memorize = () => {
   const { counter, handleAdd } = useCounter(10);
@@ -15,6 +16,8 @@ export const Memorize = () => {
       <button onClick={() => setShow(!show)}>
         Show/Hide {JSON.stringify(show)}
       </button>
+      <hr />
+      <MemoHook />
     </div>
   );
 };
