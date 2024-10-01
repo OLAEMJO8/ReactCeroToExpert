@@ -13,6 +13,7 @@ export const useFetch = (url) => {
   useEffect(() => {
     getFetch();
   }, [url]);
+
   const setLoadingState = () => {
     setState({
       data: null,
@@ -21,6 +22,7 @@ export const useFetch = (url) => {
       error: null,
     });
   };
+
   const getFetch = async () => {
     if (localCache[url]) {
       console.log("Usando Cache");
@@ -32,43 +34,55 @@ export const useFetch = (url) => {
       });
       return;
     }
+
     setLoadingState();
 
-    const resp = await fetch(url);
+    try {
+      const resp = await fetch(url);
 
-    // Sleep
+      // Sleep
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+      if (!resp.ok) {
+        setState({
+          data: null,
+          isLoading: false,
+          hasError: true,
+          error: {
+            code: resp.status,
+            message: resp.statusText,
+          },
+        });
+        return;
+      }
 
-    if (!resp.ok) {
+      const data = await resp.json();
+
+      setState({
+        data: data,
+        isLoading: false,
+        hasError: false,
+        error: null,
+      });
+
+      // Manejo de cache
+      localCache[url] = data;
+    } catch (error) {
       setState({
         data: null,
         isLoading: false,
         hasError: true,
         error: {
-          code: resp.status,
-          message: resp.statusText,
+          message: error.message,
         },
       });
-      return;
     }
-    const data = await resp.json();
-
-    setState({
-      data: data,
-      isLoading: false,
-      hasError: false,
-      error: null,
-    });
-
-    //Manejo de cache
-
-    localCache[url] = data;
   };
 
   return {
     data: state.data,
     isLoading: state.isLoading,
     hasError: state.hasError,
+    error: state.error,
   };
 };
