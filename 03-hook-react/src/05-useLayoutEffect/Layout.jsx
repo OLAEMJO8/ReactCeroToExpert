@@ -1,9 +1,9 @@
 import React from "react";
 import { useFetch } from "../hooks/useFetch";
 import { useCounter } from "../hooks/useCounter";
-import { PokemonCard } from "./PokemonCard";
+import { PokemonCard } from "../03-examples/PokemonCard";
 
-export const MultipleCustomHook = () => {
+export const Layout = () => {
   const { counter, handleAdd, handleSustract } = useCounter(1);
   const { data, hasError, isLoading } = useFetch(
     `https://pokeapi.co/api/v2/pokemon/${counter}`
