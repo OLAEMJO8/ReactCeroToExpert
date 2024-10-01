@@ -8,6 +8,7 @@ import CounterWithCustomHook from "./01-useState/CounterWithCustomHook";
 import SimpleForm from "./02-useEffect/SimpleForm";
 import FormWithCustomHook from "./02-useEffect/FormWithCustomHook";
 import { MultipleCustomHook } from "./03-examples/MultipleCustomHook";
+import { FocusScreen } from "./04-useRef/FocusScreen";
 
 const Navigation = () => {
   return (
@@ -28,6 +29,9 @@ const Navigation = () => {
         <li>
           <Link to="/multiple-hook">Multiple Hook</Link>
         </li>
+        <li>
+          <Link to="/focus-screen">Focus Screen</Link>
+        </li>
       </ul>
     </nav>
   );
@@ -43,6 +47,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/simple-form" element={<SimpleForm />} />
         <Route path="/hook-form" element={<FormWithCustomHook />} />
         <Route path="/multiple-hook" element={<MultipleCustomHook />} />
+        <Route path="/focus-screen" element={<FocusScreen />} />
       </Routes>
     </Router>
   </StrictMode>
