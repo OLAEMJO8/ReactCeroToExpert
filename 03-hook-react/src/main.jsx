@@ -7,6 +7,7 @@ import CounterApp from "./01-useState/CounterApp";
 import CounterWithCustomHook from "./01-useState/CounterWithCustomHook";
 import SimpleForm from "./02-useEffect/SimpleForm";
 import FormWithCustomHook from "./02-useEffect/FormWithCustomHook";
+import { MultipleCustomHook } from "./03-examples/MultipleCustomHook";
 
 const Navigation = () => {
   return (
@@ -24,6 +25,9 @@ const Navigation = () => {
         <li>
           <Link to="/hook-form">Hook form - useEffect</Link>
         </li>
+        <li>
+          <Link to="/multiple-hook">Multiple Hook</Link>
+        </li>
       </ul>
     </nav>
   );
@@ -38,6 +42,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/custom-counter" element={<CounterWithCustomHook />} />
         <Route path="/simple-form" element={<SimpleForm />} />
         <Route path="/hook-form" element={<FormWithCustomHook />} />
+        <Route path="/multiple-hook" element={<MultipleCustomHook />} />
       </Routes>
     </Router>
   </StrictMode>
