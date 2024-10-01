@@ -6,8 +6,14 @@ export const CallBackHook = () => {
 
   //Sirve para memorizar funciones, solo se vuelve a precesar cuando algo cambia
 
-  const incrementFather = useCallback(() => {
-    setCounter((value) => value + 1);
+  /* Agregar argumento para que incremente de 5 en 5
+  incrementFather es igual a la funcion que se llama en ShowIncrement como increment
+  
+  
+  
+  */
+  const incrementFather = useCallback((value) => {
+    setCounter((c) => c + value);
   }, []);
 
   /*const incrementFather = () => {
